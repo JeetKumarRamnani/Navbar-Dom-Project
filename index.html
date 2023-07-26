@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="flex gap-10 bg-black text-white p-4 justify-center">
+            <a href="#" class="hover:text-red-500 transition-colors duration-300">Home</a>
+            <a href="#" class="hover:text-red-500">Gallery</a>
+            <a href="#" class="hover:text-red-500">About Us</a>
+            <a href="#" class="hover:text-red-500">Contact Us</a>
+        </nav>
+    </header>
+
+    <script>
+        const nav = document.querySelectorAll("nav");
+        const links = nav[0].children;
+        const loopLinks = Array.from(links)
+
+        loopLinks.forEach((link) => {
+
+            link.addEventListener("click", () => {
+                for (let link of loopLinks) {
+                    link.classList.remove("text-blue-500")
+                }
+                link.classList.toggle("text-blue-500")
+            })
+        })
+
+    </script>
+</body>
+
+</html>
